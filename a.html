@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Example</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+        #button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">Initial Text</div>
+    <button id="button">Change</button>
+
+    <script>
+        let toggled = false;
+        const container = document.getElementById('container');
+        const button = document.getElementById('button');
+
+        button.addEventListener('click', () => {
+            if (toggled) {
+                container.innerText = 'Initial Text';
+                container.style.backgroundColor = 'lightblue';
+                button.innerText = 'Change';
+            } else {
+                container.innerText = 'Changed Text';
+                container.style.backgroundColor = 'lightgreen';
+                button.innerText = 'Reset';
+            }
+            toggled = !toggled;
+        });
+    </script>
+</body>
+</html>
